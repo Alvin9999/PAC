@@ -18,11 +18,11 @@
   "outbounds": [
     {
       "tag": "proxy", "protocol": "vless",
-      "settings": { "vnext": [{ "address": "fan3.394615.xyz", "port": 34500, "users": [{ "id": "1b6ba596-1bbe-4bde-98a3-96a54a436dcf", "email": "t@t.tt", "security": "auto", "encryption": "none" }] }] },
+      "settings": { "vnext": [{ "address": "fan3.394615.xyz", "port": 34500, "users": [{ "id": "8b66e552-e89d-4c4f-bb5a-e3d37bf151b8", "email": "t@t.tt", "security": "auto", "encryption": "none" }] }] },
       "streamSettings": {
         "network": "xhttp", "security": "reality",
-        "xhttpSettings": { "path": "/github.com/Alvin9999" },
-        "realitySettings": { "serverName": "www.lovelive-anime.jp", "fingerprint": "chrome", "show": false, "publicKey": "8_4rYT2K6drdqcfVF9YqGhleZFW5MzZGTmAxHFHn1zA", "shortId": "3a1381d1b2cc9e19", "spiderX": "/" }
+        "xhttpSettings": { "path": "/ZTwhzkrWeLnk5ARp8SsoVlVMGn6cSDq8CElbAniRQ9dMR" },
+        "realitySettings": { "serverName": "www.lovelive-anime.jp", "fingerprint": "chrome", "show": false, "publicKey": "Yg6kOijRv1IbFcwhY0WmwJ8KW7YTtux4QlQhekEzNEQ", "shortId": "3a1381d1b2cc9e19", "spiderX": "/" }
       },
       "mux": { "enabled": false, "concurrency": -1 }
     },

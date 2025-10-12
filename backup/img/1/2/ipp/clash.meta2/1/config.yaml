@@ -27,8 +27,8 @@ proxies:
     down: "55 Mbps"
   - name: dongtaiwang.com_1                     
     type: hysteria
-    server: 2001:bc8:1203:25::1
-    port: 20001
+    server: 62.210.11.74 
+    port: 30011
     auth-str: dongtaiwang.com
     sni: apple.com
     skip-cert-verify: true

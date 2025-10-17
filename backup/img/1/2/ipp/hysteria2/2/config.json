@@ -1,5 +1,5 @@
 {
-  "server": "51.158.218.2:50066",
+  "server": "[2604:6600::5cb]:22222",
   "auth": "dongtaiwang.com",
   "bandwidth": {
     "up": "11 mbps",

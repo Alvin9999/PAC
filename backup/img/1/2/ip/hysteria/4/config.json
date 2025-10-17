@@ -1,5 +1,5 @@
 {
-"server": "208.87.243.187:15823",
+"server": "[2604:6600::5cb]:15823",
 "protocol": "udp",
 "up_mbps": 11,
 "down_mbps": 55,

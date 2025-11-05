@@ -1,40 +1,30 @@
 {
-  "log": { "access": "", "error": "", "loglevel": "warning" },
+  "log": { "loglevel": "warning" },
   "inbounds": [
     {
       "tag": "socks", "port": 1080, "listen": "127.0.0.1", "protocol": "socks",
-      "sniffing": { "enabled": true, "destOverride": ["http", "tls"], "routeOnly": false },
-      "settings": { "auth": "noauth", "udp": true, "allowTransparent": false }
-    },
-    {
-      "tag": "http", "port": 1081, "listen": "127.0.0.1", "protocol": "http",
-      "sniffing": { "enabled": true, "destOverride": ["http", "tls"], "routeOnly": false },
-      "settings": { "auth": "noauth", "udp": true, "allowTransparent": false }
+      "sniffing": { "enabled": true, "destOverride": ["http", "tls"] },
+      "settings": { "auth": "noauth", "udp": true }
     }
   ],
   "outbounds": [
     {
       "tag": "proxy", "protocol": "vless",
-      "settings": { "vnext": [{ "address": "2001:bc8:32d7:302::15", "port": 34324, "users": [{ "id": "26c462ba-a90c-4814-9d7c-a629bc0bdb5c", "alterId": 0, "email": "t@t.tt", "security": "auto", "encryption": "none", "flow": "xtls-rprx-vision" }] }] },
-      "streamSettings": { "network": "tcp", "security": "reality", "realitySettings": { "serverName": "dash.cloudflare.com", "fingerprint": "chrome", "show": false, "publicKey": "pHn5CHa2P6-lNBIkTOI3zJQN19jfNFkXxGFuyefpP0M", "shortId": "", "spiderX": "" } },
-      "mux": { "enabled": false, "concurrency": -1 }
+      "settings": { "vnext": [{ "address": "2001:bc8:32d7:158::6", "port": 10033, "users": [{ "id": "56618bde-5a09-4ef8-ae56-6e7a8d69ec67", "encryption": "none" }] }] },
+      "streamSettings": {
+        "network": "grpc", "security": "reality",
+        "realitySettings": { "serverName": "nijigen-works.jp", "publicKey": "m1ORavmKKsF8kn6JfNF1m35wRORu8c6YLyxpSfyiYQ0", "shortId": "dfdfb0e2e2d400c4", "fingerprint": "chrome" },
+        "grpcSettings": { "serviceName": "FhwHiFzK" }
+      }
     },
-    { "tag": "direct", "protocol": "freedom", "settings": {} },
-    { "tag": "block", "protocol": "blackhole", "settings": { "response": { "type": "http" } } }
+    { "tag": "direct", "protocol": "freedom" },
+    { "tag": "block", "protocol": "blackhole" }
   ],
-  "dns": {
-    "hosts": { "dns.google": "8.8.8.8", "proxy.example.com": "127.0.0.1" },
-    "servers": [
-      { "address": "223.5.5.5", "domains": ["geosite:cn", "geosite:geolocation-cn"], "expectIPs": ["geoip:cn"] },
-      "1.1.1.1", "8.8.8.8", "https://dns.google/dns-query"
-    ]
-  },
   "routing": {
     "domainStrategy": "AsIs",
     "rules": [
-      { "type": "field", "inboundTag": ["api"], "outboundTag": "api" },
-      { "type": "field", "port": "443", "network": "udp", "outboundTag": "block" },
-      { "type": "field", "port": "0-65535", "outboundTag": "proxy" }
+      { "type": "field", "ip": ["geoip:private"], "outboundTag": "direct" },
+      { "type": "field", "protocol": ["bittorrent"], "outboundTag": "block" }
     ]
   }
 }

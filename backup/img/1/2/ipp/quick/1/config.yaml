@@ -25,18 +25,20 @@ proxies:
     reduce-rtt: true
     udp-relay-mode: native
     congestion-controller: bbr
-  - name: dongtaiwang.com_1                     
-    server: 2001:bc8:32d7:306::123
-    port: 33998
-    type: tuic
-    uuid: 909212b8-5d67-4532-885e-7a6b5e724ab8
+  - name: dongtaiwang.com_1   
+    type: anytls  
+    server: fan3.394615.xyz
+    port: 8443
     password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
+    alpn:
+      - h2
+      - http/1.1
     skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
   - name: dongtaiwang.com_2                     
     server: 2001:bc8:32d7:306::124
     port: 33998

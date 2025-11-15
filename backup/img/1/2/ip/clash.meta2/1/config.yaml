@@ -15,7 +15,7 @@ dns:
 proxies:
   - name: dongtaiwang.com_0                     
     server: 51.159.107.20
-    port: 10088
+    port: 55255
     type: tuic
     uuid: 79529c4a-4028-4701-a6d6-4e94b78b50fd
     password: dongtaiwang.com

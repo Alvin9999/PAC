@@ -13,18 +13,20 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
-  - name: dongtaiwang.com_0                     
-    server: 62.210.10.140
-    port: 23556
-    type: tuic
-    uuid: e732a82b-612f-415d-a9f8-e4b1df37d066
-    password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
-    skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
+- name: dongtaiwang.com_0                     
+  type: anytls
+  server: 62.210.10.140
+  port: 8443
+  password: dongtaiwang.com
+  client-fingerprint: chrome
+  udp: true
+  idle-session-check-interval: 30
+  idle-session-timeout: 30
+  min-idle-session: 0
+  alpn:
+    - h2
+    - http/1.1
+  skip-cert-verify: true
 proxy-groups:
   - name: 🚀 节点选择
     type: select
@@ -33,10 +35,9 @@ proxy-groups:
       - DIRECT
       - dongtaiwang.com_0
   - name: ♻️ 自动选择
-    type: url-test
-    url: https://www.gstatic.com/generate_204
-    interval: 300
-    tolerance: 50
+    type: fallback              
+    url: "https://www.gstatic.com/generate_204"
+    interval: 5
     proxies:
       - dongtaiwang.com_0
   - name: 🌍 国外媒体

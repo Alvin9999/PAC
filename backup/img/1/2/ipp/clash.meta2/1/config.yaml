@@ -14,29 +14,31 @@ dns:
       - 0.0.0.0/32
 proxies:
   - name: dongtaiwang.com_0                     
-    type: hysteria
     server: 51.159.107.20
-    port: 20001
-    auth-str: dongtaiwang.com
-    sni: apple.com
+    port: 10088
+    type: tuic
+    uuid: 79529c4a-4028-4701-a6d6-4e94b78b50fd
+    password: dongtaiwang.com
+    alpn: [h3]
+    sni: bing.com
     skip-cert-verify: true
-    alpn:
-      - h3
-    protocol: udp
-    up: "11 Mbps"
-    down: "55 Mbps"
+    reduce-rtt: true
+    udp-relay-mode: native
+    congestion-controller: bbr
   - name: dongtaiwang.com_1                     
-    type: hysteria
-    server: 62.210.11.74 
-    port: 30011
-    auth-str: dongtaiwang.com
-    sni: apple.com
-    skip-cert-verify: true
+    type: anytls
+    server: 62.210.11.74
+    port: 8443
+    password: dongtaiwang.com
+    client-fingerprint: chrome
+    udp: true
+    idle-session-check-interval: 30
+    idle-session-timeout: 30
+    min-idle-session: 0
     alpn:
-      - h3
-    protocol: udp
-    up: "11 Mbps"
-    down: "55 Mbps"
+      - h2
+      - http/1.1
+    skip-cert-verify: true
   - name: dongtaiwang.com_2                     
     type: hysteria
     server: 2001:bc8:1203:25::2

@@ -1,1 +1,17 @@
+inbound:
+  type: socks
+  bind-addr: "127.0.0.1:4080"
 
+outbound:
+  type: shadowquic
+  addr: "51.159.226.1:1443"
+  username: "dongtaiwang.com"
+  password: "dongtaiwang.com"
+  server-name: "www.cloudflare.com"
+  alpn: ["h3"]
+  initial-mtu: 1300
+  congestion-control: bbr
+  zero-rtt: true
+  over-stream: false
+
+log-level: "info"

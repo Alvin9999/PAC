@@ -15,7 +15,7 @@ dns:
 proxies:
   - name: dongtaiwang.com_0                     
     type: hysteria
-    server: 163.172.21.105
+    server: 2001:bc8:1203:106::16
     port: 23880
     auth-str: dongtaiwang.com
     sni: bing.com

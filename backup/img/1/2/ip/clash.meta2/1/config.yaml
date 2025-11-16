@@ -41,7 +41,7 @@ proxies:
     skip-cert-verify: true
   - name: dongtaiwang.com_2                     
     type: hysteria
-    server: 2001:bc8:1203:25::2
+    server: 51.159.107.20
     port: 20001
     auth-str: dongtaiwang.com
     sni: apple.com

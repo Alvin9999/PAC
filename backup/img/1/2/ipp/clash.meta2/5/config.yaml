@@ -14,13 +14,13 @@ dns:
       - 0.0.0.0/32
 proxies:
   - name: dongtaiwang.com_0                     
-    server: 2001:bc8:1203:106::100
-    port: 55111
+    server: 51.158.194.63
+    port: 55880
     type: tuic
-    uuid: 5ae31731-78ac-483a-b524-011d05072ef5
+    uuid: 95844688-9279-43ff-9f85-20e62b2cbcd4
     password: dongtaiwang.com
     alpn: [h3]
-    sni: bing.com
+    sni: apple.com
     skip-cert-verify: true
     reduce-rtt: true
     udp-relay-mode: native

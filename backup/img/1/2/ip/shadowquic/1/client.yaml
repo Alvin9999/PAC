@@ -4,10 +4,10 @@ inbound:
 
 outbound:
   type: shadowquic
-  addr: "51.159.226.1:1443"
+  addr: "195.154.200.13:1443"
   username: "dongtaiwang.com"
   password: "dongtaiwang.com"
-  server-name: "www.cloudflare.com"
+  server-name: "www.yahoo.com"
   alpn: ["h3"]
   initial-mtu: 1300
   congestion-control: bbr

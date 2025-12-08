@@ -1,12 +1,12 @@
 {
-  "server": "[2001:bc8:1203:106::399]:5355",
+  "server": "51.158.194.63:32952",
   "auth": "dongtaiwang.com",
   "bandwidth": {
     "up": "11 mbps",
     "down": "55 mbps"
   },
   "tls": {
-    "sni": "www.bing.com",
+    "sni": "www.microsoft.com",
     "insecure": true
   },
   "quic": {

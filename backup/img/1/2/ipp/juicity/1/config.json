@@ -1,7 +1,7 @@
 {
   "listen": "127.0.0.1:1080",
-    "server": "[2001:bc8:1203:106::6]:60099",
-    "uuid": "dfb153b3-a766-42df-abd3-0d40894f061f",
+    "server": "62.210.8.152:10077",
+    "uuid": "9f16bd45-830c-6e59-a46a-4ffd0b5f0f63",
     "password": "dongtaiwang.com",
     "sni": "apple.com",
     "allow_insecure": true,

@@ -26,49 +26,13 @@ proxies:
     udp-relay-mode: native
     congestion-controller: bbr
   - name: dongtaiwang.com_1                     
-    server: 2001:bc8:1203:106::101
-    port: 55111
+    server: 2a14:7583:2963::6e
+    port: 18899
     type: tuic
-    uuid: 5ae31731-78ac-483a-b524-011d05072ef5
+    uuid: 186a249b-5bc1-48b0-b922-534d5639ccf7
     password: dongtaiwang.com
     alpn: [h3]
-    sni: bing.com
-    skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
-  - name: dongtaiwang.com_2                     
-    server: 2001:bc8:1203:106::102
-    port: 55111
-    type: tuic
-    uuid: 5ae31731-78ac-483a-b524-011d05072ef5
-    password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
-    skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
-  - name: dongtaiwang.com_3                     
-    server: 2001:bc8:1203:106::103
-    port: 55111
-    type: tuic
-    uuid: 5ae31731-78ac-483a-b524-011d05072ef5
-    password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
-    skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
-  - name: dongtaiwang.com_4                     
-    server: 2001:bc8:1203:106::104
-    port: 55111
-    type: tuic
-    uuid: 5ae31731-78ac-483a-b524-011d05072ef5
-    password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
+    sni: apple.com
     skip-cert-verify: true
     reduce-rtt: true
     udp-relay-mode: native
@@ -81,9 +45,6 @@ proxy-groups:
       - DIRECT
       - dongtaiwang.com_0
       - dongtaiwang.com_1
-      - dongtaiwang.com_2
-      - dongtaiwang.com_3
-      - dongtaiwang.com_4
   - name: ♻️ 自动选择
     type: fallback              
     url: "https://www.gstatic.com/generate_204"
@@ -91,9 +52,6 @@ proxy-groups:
     proxies:
       - dongtaiwang.com_0
       - dongtaiwang.com_1
-      - dongtaiwang.com_2
-      - dongtaiwang.com_3
-      - dongtaiwang.com_4
   - name: 🌍 国外媒体
     type: select
     proxies:
@@ -102,9 +60,6 @@ proxy-groups:
       - 🎯 全球直连
       - dongtaiwang.com_0
       - dongtaiwang.com_1
-      - dongtaiwang.com_2
-      - dongtaiwang.com_3
-      - dongtaiwang.com_4
   - name: 📲 电报信息
     type: select
     proxies:
@@ -112,9 +67,6 @@ proxy-groups:
       - 🎯 全球直连
       - dongtaiwang.com_0
       - dongtaiwang.com_1
-      - dongtaiwang.com_2
-      - dongtaiwang.com_3
-      - dongtaiwang.com_4
   - name: Ⓜ️ 微软服务
     type: select
     proxies:
@@ -122,9 +74,6 @@ proxy-groups:
       - 🚀 节点选择
       - dongtaiwang.com_0
       - dongtaiwang.com_1
-      - dongtaiwang.com_2
-      - dongtaiwang.com_3
-      - dongtaiwang.com_4
   - name: 🍎 苹果服务
     type: select
     proxies:
@@ -132,9 +81,6 @@ proxy-groups:
       - 🎯 全球直连
       - dongtaiwang.com_0
       - dongtaiwang.com_1
-      - dongtaiwang.com_2
-      - dongtaiwang.com_3
-      - dongtaiwang.com_4
   - name: 🎯 全球直连
     type: select
     proxies:
@@ -159,8 +105,5 @@ proxy-groups:
       - ♻️ 自动选择
       - dongtaiwang.com_0
       - dongtaiwang.com_1
-      - dongtaiwang.com_2
-      - dongtaiwang.com_3
-      - dongtaiwang.com_4
 rules:
   - MATCH,🚀 节点选择

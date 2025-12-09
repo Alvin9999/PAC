@@ -18,13 +18,13 @@
   "outbounds": [
     {
       "tag": "proxy", "protocol": "vless",
-      "settings": { "vnext": [{ "address": "195.154.200.40", "port": 39433, "users": [{ "id": "3ed2ad90-b217-4872-8aa4-ef69a9b90f1e", "email": "t@t.tt", "security": "auto", "encryption": "none" }] }] },
+      "settings": { "vnext": [{ "address": "5.83.129.248", "port": 23567, "users": [{ "id": "523da2a8-fad1-4c56-97f6-61d6efa22e12", "email": "t@t.tt", "security": "auto", "encryption": "none" }] }] },
       "streamSettings": {
         "network": "xhttp", "security": "reality",
-        "xhttpSettings": { "path": "3ed2ad90-b217-4872-8aa4-ef69a9b90f1e-xh" },
-        "realitySettings": { "serverName": "www.yahoo.com", "fingerprint": "chrome", "show": false, "publicKey": "1lqZT_67ca5aaviZfHpK55-JdpNG10k2yxkGQwhF9Hg", "shortId": "cbdf01cc", "spiderX": "" }
+        "xhttpSettings": { "path": "/github.com/Alvin9999" },
+        "realitySettings": { "serverName": "www.sky.com", "fingerprint": "chrome", "show": false, "publicKey": "Yys8umOJa_XoD5k4RTDnRAjl-QbTbOemhHSRCSFQEmE", "shortId": "4293cb617260c123", "spiderX": "/" }
       },
-      "mux": { "enabled": false, "concurrency": -1 }
+      "mux": { "enabled": false, "concurrency": 10  }
     },
     { "tag": "direct", "protocol": "freedom" },
     { "tag": "block", "protocol": "blackhole" }

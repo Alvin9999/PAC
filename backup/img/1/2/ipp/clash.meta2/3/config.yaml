@@ -15,7 +15,7 @@ dns:
 proxies:
   - name: dongtaiwang.com_0                     
     type: vless
-    server: 195.154.200.131
+    server: 195.154.200.13
     port: 17401
     uuid: add14a5b-f648-4423-8a1f-8b8f54c0daef
     network: tcp

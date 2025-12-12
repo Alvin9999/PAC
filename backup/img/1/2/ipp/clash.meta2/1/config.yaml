@@ -26,19 +26,17 @@ proxies:
     up: "11 Mbps"
     down: "55 Mbps"
   - name: dongtaiwang.com_1                     
-    type: anytls
-    server: 62.210.11.74
-    port: 8443
+    server: ipv4.758733.xyz
+    port: 50088
+    type: tuic
+    uuid: 93959440-4f83-4352-b939-906b1fd3fa59
     password: dongtaiwang.com
-    client-fingerprint: chrome
-    udp: true
-    idle-session-check-interval: 30
-    idle-session-timeout: 30
-    min-idle-session: 0
-    alpn:
-      - h2
-      - http/1.1
+    alpn: [h3]
+    sni: bing.com
     skip-cert-verify: true
+    reduce-rtt: true
+    udp-relay-mode: native
+    congestion-controller: bbr
   - name: dongtaiwang.com_2                     
     type: hysteria
     server: ipv4.758733.xyz

@@ -13,18 +13,18 @@ dns:
       - 240.0.0.0/4
       - 0.0.0.0/32
 proxies:
-  - name: dongtaiwang.com_0                     
-    server: ipv4.758733.xyz
-    port: 50088
-    type: tuic
-    uuid: 93959440-4f83-4352-b939-906b1fd3fa59
-    password: dongtaiwang.com
-    alpn: [h3]
-    sni: bing.com
+  - name: dongtaiwang.com_0  
+    type: hysteria  
+    server: ipv4-2.758733.xyz
+    port: 30077
+    auth-str: dongtaiwang.com
+    sni: apple.com
     skip-cert-verify: true
-    reduce-rtt: true
-    udp-relay-mode: native
-    congestion-controller: bbr
+    alpn:
+      - h3
+    protocol: udp
+    up: "11 Mbps"
+    down: "55 Mbps"
   - name: dongtaiwang.com_1                     
     type: anytls
     server: 62.210.11.74

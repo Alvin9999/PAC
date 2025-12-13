@@ -18,11 +18,11 @@
   "outbounds": [
     {
       "tag": "proxy", "protocol": "vless",
-      "settings": { "vnext": [{ "address": "5.83.129.248", "port": 23567, "users": [{ "id": "523da2a8-fad1-4c56-97f6-61d6efa22e12", "email": "t@t.tt", "security": "auto", "encryption": "none" }] }] },
+      "settings": { "vnext": [{ "address": "62.210.127.177", "port": 60011, "users": [{ "id": "a1f699e4-d7b7-4cdc-8414-1105e08fe4c5", "email": "t@t.tt", "security": "auto", "encryption": "none" }] }] },
       "streamSettings": {
         "network": "xhttp", "security": "reality",
         "xhttpSettings": { "path": "/github.com/Alvin9999" },
-        "realitySettings": { "serverName": "www.sky.com", "fingerprint": "chrome", "show": false, "publicKey": "Yys8umOJa_XoD5k4RTDnRAjl-QbTbOemhHSRCSFQEmE", "shortId": "4293cb617260c123", "spiderX": "/" }
+        "realitySettings": { "serverName": "www.pixiv.co.jp", "fingerprint": "chrome", "show": false, "publicKey": "BTCE_8R4FJ7wf9mR7PkONJyeihtHqi_TptjC20eMhic", "shortId": "ea22dff3025e4ff8", "spiderX": "/" }
       },
       "mux": { "enabled": false, "concurrency": 10  }
     },

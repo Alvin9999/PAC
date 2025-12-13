@@ -1,21 +1,30 @@
 {
   "log": { "loglevel": "warning" },
+  "dns": {
+    "hosts": { "dns.google": "8.8.8.8", "proxy.example.com": "127.0.0.1" },
+    "servers": [
+      { "address": "1.1.1.1", "skipFallback": true, "domains": ["domain:googleapis.cn", "domain:gstatic.com"] },
+      { "address": "223.5.5.5", "skipFallback": true, "domains": ["geosite:cn"], "expectIPs": ["geoip:cn"] },
+      "1.1.1.1", "8.8.8.8", "https://dns.google/dns-query"
+    ]
+  },
   "inbounds": [
     {
-      "tag": "socks", "port": 1080, "listen": "127.0.0.1", "protocol": "socks",
-      "sniffing": { "enabled": true, "destOverride": ["http", "tls"] },
-      "settings": { "auth": "noauth", "udp": true }
+      "tag": "socks", "port": 1080, "listen": "127.0.0.1", "protocol": "mixed",
+      "sniffing": { "enabled": true, "destOverride": ["http", "tls"], "routeOnly": false },
+      "settings": { "auth": "noauth", "udp": true, "allowTransparent": false }
     }
   ],
   "outbounds": [
     {
       "tag": "proxy", "protocol": "vless",
-      "settings": { "vnext": [{ "address": "2001:bc8:32d7:158::6", "port": 10033, "users": [{ "id": "56618bde-5a09-4ef8-ae56-6e7a8d69ec67", "encryption": "none" }] }] },
+      "settings": { "vnext": [{ "address": "2001:bc8:32d7:14f::6", "port": 60011, "users": [{ "id": "a1f699e4-d7b7-4cdc-8414-1105e08fe4c5", "email": "t@t.tt", "security": "auto", "encryption": "none" }] }] },
       "streamSettings": {
-        "network": "grpc", "security": "reality",
-        "realitySettings": { "serverName": "nijigen-works.jp", "publicKey": "m1ORavmKKsF8kn6JfNF1m35wRORu8c6YLyxpSfyiYQ0", "shortId": "dfdfb0e2e2d400c4", "fingerprint": "chrome" },
-        "grpcSettings": { "serviceName": "FhwHiFzK" }
-      }
+        "network": "xhttp", "security": "reality",
+        "xhttpSettings": { "path": "/github.com/Alvin9999" },
+        "realitySettings": { "serverName": "www.pixiv.co.jp", "fingerprint": "chrome", "show": false, "publicKey": "BTCE_8R4FJ7wf9mR7PkONJyeihtHqi_TptjC20eMhic", "shortId": "ea22dff3025e4ff8", "spiderX": "/" }
+      },
+      "mux": { "enabled": false, "concurrency": 10  }
     },
     { "tag": "direct", "protocol": "freedom" },
     { "tag": "block", "protocol": "blackhole" }
@@ -23,8 +32,15 @@
   "routing": {
     "domainStrategy": "AsIs",
     "rules": [
-      { "type": "field", "ip": ["geoip:private"], "outboundTag": "direct" },
-      { "type": "field", "protocol": ["bittorrent"], "outboundTag": "block" }
+      { "type": "field", "inboundTag": ["api"], "outboundTag": "api" },
+      { "type": "field", "outboundTag": "proxy", "domain": ["domain:googleapis.cn", "domain:gstatic.com"] },
+      { "type": "field", "port": "443", "network": "udp", "outboundTag": "block" },
+      { "type": "field", "outboundTag": "direct", "ip": ["geoip:private"] },
+      { "type": "field", "outboundTag": "direct", "domain": ["geosite:private"] },
+      { "type": "field", "outboundTag": "direct", "ip": ["223.5.5.5","223.6.6.6","2400:3200::1","2400:3200:baba::1","119.29.29.29","1.12.12.12","120.53.53.53","2402:4e00::","2402:4e00:1::","180.76.76.76","2400:da00::6666","114.114.114.114","114.114.115.115","114.114.114.119","114.114.115.119","114.114.114.110","114.114.115.110","180.184.1.1","180.184.2.2","101.226.4.6","218.30.118.6","123.125.81.6","140.207.198.6","1.2.4.8","210.2.4.8","52.80.66.66","117.50.22.22","2400:7fc0:849e:200::4","2404:c2c0:85d8:901::4","117.50.10.10","52.80.52.52","2400:7fc0:849e:200::8","2404:c2c0:85d8:901::8","117.50.60.30","52.80.60.30"] },
+      { "type": "field", "outboundTag": "direct", "domain": ["domain:alidns.com","domain:doh.pub","domain:dot.pub","domain:360.cn","domain:onedns.net"] },
+      { "type": "field", "outboundTag": "direct", "ip": ["geoip:cn"] },
+      { "type": "field", "outboundTag": "direct", "domain": ["geosite:cn"] }
     ]
   }
 }
